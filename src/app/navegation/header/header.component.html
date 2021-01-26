@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/images/checkLogo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    CheckThingsApp
+  </a>
+  <div class="navbar navbar-expand">
+    <div class="navbar-nav">
+      <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn btn-outline-light dropdown-toggle" >
+          Things
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu">
+          <li role="menuitem"><a class="dropdown-item" [routerLink]="['/gamesList']">Games</a></li>
+          <li role="menuitem"><a class="dropdown-item" [routerLink]="['/filmsList']">Films</a></li>
+          <li role="menuitem"><a class="dropdown-item" [routerLink]="['/booksList']">Books</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Add Something</a>
+          </li>
+        </ul>
+      </div>    
+      <a class="nav-item nav-link text-white" href="#">Home</a>
+      <a class="nav-item nav-link text-white" [routerLink]="['/contact']">Contact</a>
+      <a class="nav-item nav-link text-white" [routerLink]="['/about']">About</a>
+    </div>
+  </div>
+</nav>

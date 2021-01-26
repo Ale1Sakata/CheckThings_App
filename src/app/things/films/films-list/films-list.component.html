@@ -1,0 +1,35 @@
+<div class="container container-thingsHeader">
+    <nav class="navbar navbar-thingsTitle">
+        <a class="navbar-brand">Films</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-space btn-outline-primary my-2 my-sm-0" type="submit" [routerLink]="['/filmsCreate']">Create New Film</button>
+        </form>
+    </nav>
+
+    <div class="row text-center container-thingsHeader">
+        <div *ngFor="let film of films" class="col-md-3 col-list">
+            <div class="card text-center">
+                <div class="card-header">
+                    <div style="align-content:center;">
+                        <img [src]="getImgPath(film.imagePath)" height="260px" width="210px" alt="">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ film.name }}</h5>
+                    <p class="card-text card-info">{{ film.producer }}</p>
+                    <p class="card-text card-info">{{ film.director }}</p>
+                    <p class="card-text card-info">{{ film.genre }}</p>
+                    <p class="card-text card-info"><small>Release: {{ film.releaseDate | date: ['MMMM d, y'] }}</small></p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-outline-warning btn-sm" [routerLink]="['/filmsEdit/', film.id]">Edit</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm" [routerLink]="" (click)="deleteFilm(film.name, film.id)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

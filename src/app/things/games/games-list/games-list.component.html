@@ -1,0 +1,34 @@
+<div class="container container-thingsHeader">
+    <nav class="navbar navbar-thingsTitle">
+        <a class="navbar-brand">Games</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-space btn-outline-primary my-2 my-sm-0" type="submit" [routerLink]="['/gamesCreate']">Create New Game</button>
+        </form>
+    </nav>
+
+    <div class="row text-center container-thingsHeader">
+        <div *ngFor="let game of games" class="col-md-3 col-list">
+            <div class="card text-center">
+                <div class="card-header">
+                    <div style="align-content:center;">
+                        <img [src]="getImgPath(game.imagePath)" height="250px" width="210px" alt="">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ game.name }}</h5>
+                    <p class="card-text card-info">{{ game.developer }}</p>
+                    <p class="card-text card-info">{{ game.genre }}</p>
+                    <p class="card-text card-info"><small>Release: {{ game.releaseDate | date: ['MMMM d, y'] }}</small></p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" class="btn btn-outline-warning btn-sm" [routerLink]="['/gamesEdit/', game.id]">Edit</button>
+                        <button type="button" class="btn btn-outline-danger btn-sm" [routerLink]="" (click)="deleteGame(game.name, game.id)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

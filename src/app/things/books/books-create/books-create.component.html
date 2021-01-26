@@ -1,0 +1,56 @@
+<div class="container container-thingsHeader">
+    <nav class="navbar navbar-thingsTitle">
+        <a class="navbar-brand">Create New Book</a>
+    </nav>
+    <div class="container container-thingsHeader">
+        <form class="mbr-form" [formGroup]="bookForm" (ngSubmit)="submitBook()">
+            <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7" for="name-form1-2w">Name</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Ex. Le Petit Prince">
+            </div>
+            <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7" for="name-form1-2w">Author</label>
+                <input type="text" class="form-control" formControlName="author"
+                    placeholder="Ex. Antoine de Saint-Exupéry">
+            </div>
+            <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7" for="name-form1-2w">Genre</label>
+                <input type="text" class="form-control" formControlName="genre"
+                    placeholder="Ex. Literatura Infanto-Juvenil">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label class="form-control-label mbr-fonts-style display-7" for="example-date-input">Release
+                            Date</label>
+                        <input class="col form-control" type="date" formControlName="releaseDate">
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-control-label mbr-fonts-style display-7" for="example-date-input">Upload
+                        Image</label>
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="file" #file placeholder="choose file" (change)="uploadFile(file.files)"
+                                style="display:none;">
+                            <button type="button" class="btn btn-outline-info" (click)="file.click()">Choose
+                                File</button>
+                        </div>
+                        <div class="col">
+                            <span class="upload" *ngIf="progress > 0">
+                                {{progress}}%
+                            </span>
+                            <span class="upload" *ngIf="message">
+                                {{message}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="input-group-btn">
+                <button class="btn btn-outline-primary" type="submit">Submit</button>
+                <button class="btn btn-outline-danger btn-space" [routerLink]="['/booksList']">Cancel</button>
+            </span>
+        </form>
+    </div>
+</div>

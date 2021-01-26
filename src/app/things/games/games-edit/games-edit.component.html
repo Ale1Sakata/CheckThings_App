@@ -1,0 +1,33 @@
+<div class="container container-thingsHeader">
+  <nav class="navbar navbar-thingsTitle">
+    <a class="navbar-brand">Edit Game</a>
+  </nav>
+  <div class="container container-thingsHeader">
+    <form class="mbr-form" [formGroup]="editFormGroup" (ngSubmit)="onSave()">
+      <div class="form-group">
+        <label class="form-control-label mbr-fonts-style display-7" for="name-form1-2w">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label class="form-control-label mbr-fonts-style display-7" for="name-form1-2w">Developer</label>
+        <input type="text" class="form-control" formControlName="developer">
+      </div>
+      <div class="form-group">
+        <label class="form-control-label mbr-fonts-style display-7" for="name-form1-2w">Genre</label>
+        <input type="text" class="form-control" formControlName="genre">
+      </div>
+      <div class="form-group">
+        <label class="form-control-label mbr-fonts-style display-7" for="example-date-input">Release Date</label>
+        <input class="col-3 form-control" type="date" formControlName="releaseDate">
+      </div>
+      <div class="form-group">
+        <label class="form-control-label mbr-fonts-style display-7" for="name-form1-2w">Image</label>
+        <input type="text" class="col-3 form-control" formControlName="imagePath">
+      </div>
+      <span class="input-group-btn">
+        <button class="btn btn-outline-success" type="submit">Save</button>
+        <button class="btn btn-outline-danger btn-space" [routerLink]="['/gamesList']">Cancel</button>
+      </span>
+    </form>
+  </div>
+</div>

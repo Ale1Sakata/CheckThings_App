@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+.container-thingsHeader{
+    padding-top: 20px;
+}
+
+.navbar-thingsTitle{
+    background-color: #e3f2fd;
+}
+
+.btn-space{
+    margin: 5px
+}
+
+.upload{
+    font-weight:bold;
+    color:#17a2b8;
+    margin-left: 15px;
+    line-height: 36px;
+}
+
+.card-info{
+    margin-bottom: 0.5rem;
+}
+
+.col-list{
+    padding-bottom: 2.5rem;
+}
